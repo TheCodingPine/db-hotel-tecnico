@@ -32,7 +32,11 @@ GROUP BY stanza_id
 JOIN
 
 9. Stampare tutti gli ospiti per ogni prenotazione
-> SELECT
+> SELECT prenotazioni.id AS ID_Prenotazione, ospiti.name + ' ' + ospiti.lastname AS Nominativo, prenotazioni.stanza_id AS Numero_Di_Stanza
+FROM ospiti 
+INNER JOIN prenotazioni_has_ospiti ON ospiti.id = prenotazioni_has_ospiti.ospite_id
+INNER JOIN prenotazioni ON prenotazioni_has_ospiti.prenotazione_id = prenotazioni.id
+ORDER BY prenotazioni.id
 10. Fai la somma di tutti i prezzi delle prenotazioni per le stanze del primo piano
 > SELECT
 11. Le stanze sono state tutte prenotate almeno una volta? (Visualizzare le stanze
