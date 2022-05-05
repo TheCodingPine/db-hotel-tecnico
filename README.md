@@ -38,7 +38,12 @@ INNER JOIN prenotazioni_has_ospiti ON ospiti.id = prenotazioni_has_ospiti.ospite
 INNER JOIN prenotazioni ON prenotazioni_has_ospiti.prenotazione_id = prenotazioni.id
 ORDER BY prenotazioni.id
 10. Fai la somma di tutti i prezzi delle prenotazioni per le stanze del primo piano
-> SELECT
+> SELECT SUM(price) AS 'Guadagno Totale dalle stanze al Primo Piano', status AS Esito
+FROM stanze 
+INNER JOIN prenotazioni ON prenotazioni.stanza_id = stanze.id
+INNER JOIN pagamenti ON pagamenti.prenotazione_id = prenotazioni.id
+WHERE (stanze.floor=1) AND (pagamenti.status='accepted') OR (pagamenti.status='pending')
+GROUP BY status
 11. Le stanze sono state tutte prenotate almeno una volta? (Visualizzare le stanze
 non ancora prenotate) - BONUS
 > SELECT
