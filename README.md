@@ -16,12 +16,19 @@ WHERE status='accepted'
 ORDER BY price DESC
 6. Quanti posti letto ha l’hotel in totale?
 > SELECT COUNT(beds) FROM stanze
+
 GROUP BY
+
 7. Somma i prezzi dei pagamenti raggruppandoli per status
-> SELECT
+> SELECT status AS Stato_Transazione, SUM(price) AS Somma_Complessiva
+FROM pagamenti
+GROUP BY status
+
 8. Conta quante volte è stata prenotata ogni stanza
 > SELECT
+
 JOIN
+
 9. Stampare tutti gli ospiti per ogni prenotazione
 > SELECT
 10. Fai la somma di tutti i prezzi delle prenotazioni per le stanze del primo piano
