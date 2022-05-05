@@ -15,7 +15,7 @@ FROM pagamenti
 WHERE status='accepted'
 ORDER BY price DESC
 6. Quanti posti letto ha l’hotel in totale?
-> SELECT
+> SELECT COUNT(beds) FROM stanze
 GROUP BY
 7. Somma i prezzi dei pagamenti raggruppandoli per status
 > SELECT
