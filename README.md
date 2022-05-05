@@ -6,7 +6,9 @@ SELECT SU UNICA TABELLA
 3. Seleziona tutti gli ospiti il cui nome inizia con la D
 > SELECT * FROM ospiti WHERE name LIKE 'D%'
 4. Calcola il totale incassato degli ordini accepted (res : 4164.00)
-> SELECT 
+> SELECT SUM(price)
+FROM pagamenti
+WHERE status='accepted'
 5. Qual è il prezzo massimo pagato? (res : 869.00)
 > SELECT
 6. Quanti posti letto ha l’hotel in totale?
