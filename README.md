@@ -10,7 +10,10 @@ SELECT SU UNICA TABELLA
 FROM pagamenti
 WHERE status='accepted'
 5. Qual è il prezzo massimo pagato? (res : 869.00)
-> SELECT
+> SELECT TOP 1 price
+FROM pagamenti
+WHERE status='accepted'
+ORDER BY price DESC
 6. Quanti posti letto ha l’hotel in totale?
 > SELECT
 GROUP BY
