@@ -2,7 +2,7 @@ SELECT SU UNICA TABELLA
 1. Seleziona tutti gli ospiti che sono stati identificati con la carta di identità
 >SELECT * FROM ospiti where document_type ='CI'
 2. Seleziona tutti gli ospiti che sono nati dopo il 1988
-> SELECT 
+> SELECT * FROM ospiti WHERE date_of_birth >= '1989/01/01'
 3. Seleziona tutti gli ospiti il cui nome inizia con la D
 > SELECT 
 4. Calcola il totale incassato degli ordini accepted (res : 4164.00)
