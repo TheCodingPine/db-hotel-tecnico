@@ -25,7 +25,9 @@ FROM pagamenti
 GROUP BY status
 
 8. Conta quante volte è stata prenotata ogni stanza
-> SELECT
+> SELECT stanza_id AS Numero_Stanza, COUNT(stanza_id) AS Prenotazioni_Totali
+FROM prenotazioni
+GROUP BY stanza_id
 
 JOIN
 
